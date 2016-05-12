@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class MainMenuActivity extends ListActivity {
 
     String[] menu={"Usuarios","Docentes","Grados Academicos", "Experiencia laboral","Experiencia Academica","Salir"};
+    String[] activities ={"MenuUsuarioActivity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +31,15 @@ public class MainMenuActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
         if(position!=5){
-           /* String nombreValue=activities[position];
+           String nombreValue=activities[position];
             try{
-                Class<?> clase=Class.forName("sv.ues.fia.basedatoscarnet."+nombreValue);
+                Class<?> clase=Class.forName("fia.ues.sv.login."+nombreValue);
                 Intent inte = new Intent(this,clase);
                 this.startActivity(inte);
 
             }catch(ClassNotFoundException e){
                 e.printStackTrace();
-            }*/
+            }
         }else{
             try{
                 Class<?> clase=Class.forName("fia.ues.sv.login.LogInActivity");
