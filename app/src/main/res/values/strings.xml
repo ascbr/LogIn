@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Perfil de Docentes</string>
+    <string name="app_name">Perfil de docentes</string>
     <string name="MenuUsuario_title">Menu Usuarios</string>
+    <string name="menu_principal_name">Menu Principal</string>
+    <string name="menu_usuario_name">Menu Usuario</string>
+
 </resources>

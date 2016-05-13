@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenuActivity" />
-        <activity android:name=".MenuUsuarioActivity"></activity>
+        <activity android:name=".MenuUsuarioActivity" />
+        <activity android:name=".CrudUsuario" />
+        <activity android:name=".CrudAccesoUsuario" />
+        <activity android:name=".CrudOpcionCrud"></activity>
     </application>
 
 </manifest>

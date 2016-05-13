@@ -17,7 +17,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     private static final String CREATE_TABLE_USUARIO ="CREATE TABLE Usuario (" +
-            "IdUsuario VARCHAR(2) PRIMARY KEY NOT NULL," +
+            "IdUsuario VARCHAR(2) PRIMARY KEY NOT NULL" +
             "NombreUsuario VARCHAR(30) NOT NULL," +
             "Clave VARCHAR(5) NOT NULL" +
             "); ";
@@ -42,35 +42,35 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             ");";
 
     private static final String CREATE_TABLE_TIPO_CONTRATACION="CREATE TABLE tipo_contratacion(" +
-            "id_tipo_contratacion INTEGER NOT NULL PRIMARY KEY," +
+            "id_tipo_contratacion INTEGER PRIMARY KEY AUTOINCREMENT," +
             "desc_tipo_contratacion VARCHAR(256)," +
             "tipo_contrato VARCHAR(4)" +
             ");";
 
     private static final String CREATE_TABLE_CATEGORIA="CREATE TABLE categoria(" +
-            "id_categoria INTEGER NOT NULL PRIMARY KEY," +
+            "id_categoria INTEGER  PRIMARY KEY AUTOINCREMENT," +
             "nombre_categoria VARCHAR(60) NOT NULL," +
             "descripcion_cat VARCHAR(250) NOT NULL" +
             ");";
 
     private static final String CREATE_TABLE_DETALLE_GRADO_ACAD="CREATE TABLE detalle_grado_academico(" +
-            "id_detalle_grado INTEGER NOT NULL PRIMARY KEY," +
+            "id_detalle_grado INTEGER PRIMARY KEY AUTOINCREMENT," +
             "id_grado_acad INTEGER NOT NULL" +
             ");";
     private static final String CREATE_TABLE_GRADO_ACAD="CREATE TABLE grado_academico(" +
-            "id_grado_acad INTEGER NOT NULL PRIMARY KEY," +
+            "id_grado_acad INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_grado_acad VARCHAR(60)," +
             "desc_tipo_grado_acad VARCHAR(250)" +
             ");";
     private static final String CREATE_TABLE_INSTITUCION="CREATE TABLE institucion(" +
-            "id_institucion INTEGER NOT NULL PRIMARY KEY," +
+            "id_institucion INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_institucion VARCHAR(100) NOT NULL," +
             "direccion_institucion VARCHAR(100)," +
             "pais VARCHAR(60) " +
             ");";
 
     private static final String CREATE_TABLE_EXP_LAB="CREATE TABLE experiencia_laboral(" +
-            "id_experiencia_lab INTEGER NOT NULL PRIMARY KEY," +
+            "id_experiencia_lab INTEGER PRIMARY KEY AUTOINCREMENT," +
             "id_cargo INTEGER NOT NULL," +
             "id_docente VARHCHAR(7) NOT NULL, " +
             "id_empresa INTEGER NOT NULL," +
@@ -79,19 +79,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             ");";
 
     private static final String CREATE_TABLE_CARGO ="CREATE TABLE cargo(" +
-            "id_cargo INTEGER NOT NULL PRIMARY KEY," +
+            "id_cargo INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_cargo VARCHAR(100), " +
             "descripcion_cargo VARCHAR (250)" +
             ");";
     private static final String CREATE_TABLE_EMPRESA="CREATE TABLE empresa(" +
-            "id_empresa INTEGER NOT NULL PRIMARY KEY," +
+            "id_empresa INTEGER  PRIMARY KEY AUTOINCREMENT," +
             "nombre_empresa VARCHAR(60) NOT NULL," +
             "direccion_empresa VARCHAR(100)," +
             "rubro_empresa VARCHAR(60) " +
             ");";
 
     private static final String CREATE_TABLE_EXP_ACAD="CREATE TABLE experiencia_academica(" +
-            "id_experiencia_acad INTEGER NOT NULL PRIMARY KEY," +
+            "id_experiencia_acad INTEGER PRIMARY KEY AUTOINCREMENT," +
             "id_materia INTEGER NOT NULL," +
             "id_docente VARHCHAR(7) NOT NULL," +
             "id_ciclo INTEGER NOT NULL," +
@@ -101,24 +101,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             ");";
 
     private static final String CREATE_TABLE_CICLO="CREATE TABLE ciclo(" +
-            "id_ciclo INTEGER NOT NULL PRIMARY KEY," +
+            "id_ciclo INTEGER PRIMARY KEY AUTOINCREMENT," +
             "anio_ciclo VARCHAR(4) NOT NULL," +
             "num_ciclo INTEGER" +
             ");";
     private static final String CREATE_TABLE_PUESTO="CREATE TABLE puesto(" +
-            "id_puesto INTEGER NOT NULL PRIMARY KEY," +
+            "id_puesto INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_puesto VARCHAR(100) NOT NULL," +
             "descripcion_puesto VARCHAR(200)" +
             ");";
 
     private static final String CREATE_TABLE_MATERIA="CREATE TABLE materia(" +
-            "id_materia INTEGER NOT NULL PRIMARY KEY," +
+            "id_materia INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_materia VARCHAR(30) NOT NULL," +
             "descripcion_materia VARCHAR(200) " +
             ");";
 
     private static final String CREATE_TABLE_INSTITUCION_LAB="CREATE TABLE institucion_lab(" +
-            "id_institucion_lab INTEGER NOT NULL PRIMARY KEY," +
+            "id_institucion_lab INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre_institucion_lab VARCHAR(100) NOT NULL," +
             "direccion_institucion_lab VARCHAR(100)," +
             "pais_lab VARCHAR(60) " +
