@@ -19,7 +19,11 @@
         <activity android:name=".MenuUsuarioActivity" />
         <activity android:name=".CrudUsuario" />
         <activity android:name=".CrudAccesoUsuario" />
-        <activity android:name=".CrudOpcionCrud"></activity>
+        <activity android:name=".CrudOpcionCrud" />
+        <activity android:name=".CrearUsuarioActivity" />
+        <activity android:name=".ActualizarUsuarioActivity" />
+        <activity android:name=".EliminarUsuarioActivity" />
+        <activity android:name=".ConsultarUsuarioActivity"></activity>
     </application>
 
 </manifest>

@@ -3,5 +3,27 @@
     <string name="MenuUsuario_title">Menu Usuarios</string>
     <string name="menu_principal_name">Menu Principal</string>
     <string name="menu_usuario_name">Menu Usuario</string>
+    <string name="titulo_nuevo_usuario">Nuevo Usuario</string>
+    <string name="textNombreUsuario">Nombre:</string>
+    <string name="textClaveUsuario">Contraseña:</string>
+    <string name="usuario_permisos">Permisos:</string>
+    <string name="tbl_usuarios">Usuarios</string>
+    <string name="tbl_docente">Docentes</string>
+    <string name="tbl_tipoContratacion">Tipo Contratacion</string>
+    <string name="tbl_categoria">Categoria</string>
+    <string name="tbl_detalleGradoAcad">Detalle Grado Academico</string>
+    <string name="tbl_gradoAcad">Grado Academico</string>
+    <string name="tbl_institucion">Institucion Grado Academico</string>
+    <string name="tbl_expLab">Experiencia Laboral</string>
+    <string name="tbl_cargo">Cargo</string>
+    <string name="tbl_empresa">Empresa</string>
+    <string name="tbl_exp_acad">Experiencia Academica</string>
+    <string name="tbl_ciclo">Ciclo</string>
+    <string name="tbl_puesto">Puesto</string>
+    <string name="tbl_institucion_exp_acad">Institucion experiencia academica</string>
+    <string name="crud_insertar">Insertar</string>
+    <string name="crud_actualizar">Actualizar</string>
+    <string name="crud_eliminar">Eliminar</string>
+    <string name="crud_consultar">Consultar</string>
 
 </resources>
