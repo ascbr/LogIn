@@ -10,11 +10,18 @@ import android.widget.Toast;
 public class LogInActivity extends AppCompatActivity {
 
     DataBaseHelper helper = new DataBaseHelper(this);
+    EditText usuario;
+    EditText pass;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        usuario = (EditText) findViewById(R.id.textUser);
+        pass = (EditText) findViewById(R.id.textPassword);
 
     }
     @Override
@@ -22,12 +29,16 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void loginClick(View v){
-        EditText usuario = (EditText) findViewById(R.id.textUser);
-        EditText pass = (EditText) findViewById(R.id.textPassword);
+
 
 
         boolean encontrado=false;
+
         encontrado = helper.checkUsuario(usuario.getText().toString(),pass.getText().toString());
+
+        Usuario user = helper.consultarUsuario(usuario.getText().toString());
+
+
         if(encontrado){
 
             try{
@@ -35,7 +46,7 @@ public class LogInActivity extends AppCompatActivity {
 
                 Intent inte = new Intent(this,clase);
 
-                inte.putExtra("userName",usuario.getText().toString());
+                inte.putExtra("id",user.getIdUsuario());
                 this.startActivity(inte);
 
             }catch(ClassNotFoundException e){

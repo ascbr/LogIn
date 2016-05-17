@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +8,786 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="fia.ues.sv.login.ActualizarUsuarioActivity">
+    tools:context="fia.ues.sv.login.CrearUsuarioActivity"
+    android:weightSum="1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1800dp">
 
-</RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_actualizar_usuario"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+
+            android:paddingBottom="20dp"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/textNombreUsuario"
+            android:id="@+id/textViewNombre_Usuario"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_nombre"
+            android:layout_below="@+id/textViewNombre_Usuario"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/text_nueva_contraseña"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/editText_nombre"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText_pass"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tbl_usuarios"
+            android:id="@+id/textView5"
+            android:layout_above="@+id/usuario_actualizarCheck"
+            android:layout_alignStart="@+id/docente_insertarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/text_editar_permisos"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/editText_pass"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/usuario_insertatCheck"
+            android:checked="false"
+            android:layout_marginTop="67dp"
+            android:layout_below="@+id/textView6"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/usuario_actualizarCheck"
+            android:layout_alignTop="@+id/usuario_insertatCheck"
+            android:layout_toEndOf="@+id/usuario_insertatCheck"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/usuario_eliminarCheck"
+            android:layout_below="@+id/usuario_insertatCheck"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/usuario_consultarCheck"
+            android:layout_alignTop="@+id/usuario_eliminarCheck"
+            android:layout_toEndOf="@+id/usuario_eliminarCheck"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/docente_actualizarCheck"
+            android:checked="false"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/usuario_consultarCheck"
+            android:layout_toEndOf="@+id/docente_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/docente_consultarCheck"
+            android:checked="false"
+            android:layout_below="@+id/docente_actualizarCheck"
+            android:layout_toEndOf="@+id/docente_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/docente_insertarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/docente_actualizarCheck"
+            android:layout_toStartOf="@+id/usuario_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/docente_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/docente_actualizarCheck"
+            android:layout_alignStart="@+id/docente_insertarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tbl_docente"
+            android:id="@+id/textView7"
+            android:layout_above="@+id/docente_insertarCheck"
+            android:layout_alignStart="@+id/docente_insertarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_tipoContratacion"
+            android:id="@+id/textView8"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/docente_consultarCheck"
+            android:layout_alignStart="@+id/docente_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/contratacion_insertarCheck"
+            android:layout_below="@+id/textView8"
+            android:layout_alignStart="@+id/textView8"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/contratacion_actualizarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView8"
+            android:layout_alignEnd="@+id/gradoAcad_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/contratacion_eliminarCheck"
+            android:layout_below="@+id/contratacion_insertarCheck"
+            android:layout_alignStart="@+id/contratacion_insertarCheck"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/contratacion_consultarCheck"
+            android:layout_alignTop="@+id/contratacion_eliminarCheck"
+            android:layout_alignStart="@+id/docente_consultarCheck"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_categoria"
+            android:id="@+id/textView9"
+            android:layout_below="@+id/contratacion_eliminarCheck"
+            android:layout_alignStart="@+id/contratacion_eliminarCheck"
+            android:layout_marginTop="19dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/categoria_insertarCheck"
+            android:layout_below="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/categoria_actualizarCheck"
+            android:layout_alignTop="@+id/categoria_insertarCheck"
+            android:layout_toEndOf="@+id/contratacion_eliminarCheck"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/categoria_eliminarCheck"
+            android:layout_below="@+id/categoria_insertarCheck"
+            android:layout_toStartOf="@+id/categoria_actualizarCheck"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/categoria_consultarCheck"
+            android:layout_below="@+id/categoria_actualizarCheck"
+            android:layout_alignStart="@+id/categoria_actualizarCheck"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_detalleGradoAcad"
+            android:id="@+id/textView10"
+            android:layout_below="@+id/categoria_eliminarCheck"
+            android:layout_alignStart="@+id/categoria_eliminarCheck"
+            android:layout_marginTop="20dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/detalleGAcad_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView10"
+            android:layout_alignStart="@+id/textView10" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/detalleGAcad_actualizarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView10"
+            android:layout_toEndOf="@+id/categoria_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/detalleGAcad_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/detalleGAcad_eliminarCheck"
+            android:layout_alignStart="@+id/detalleGAcad_actualizarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/detalleGAcad_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/detalleGAcad_insertarCheck"
+            android:layout_alignStart="@+id/detalleGAcad_insertarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_gradoAcad"
+            android:id="@+id/textView11"
+            android:layout_below="@+id/detalleGAcad_eliminarCheck"
+            android:layout_alignStart="@+id/detalleGAcad_eliminarCheck"
+            android:layout_marginTop="15dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/gradoAcad_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView11"
+            android:layout_alignStart="@+id/textView11" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/gradoAcad_actualizarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView11"
+            android:layout_toEndOf="@+id/detalleGAcad_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/gradoAcad_consultarCheck"
+            android:checked="false"
+            android:layout_below="@+id/gradoAcad_actualizarCheck"
+            android:layout_alignEnd="@+id/gradoAcad_actualizarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/gradoAcad_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/gradoAcad_insertarCheck"
+            android:layout_toStartOf="@+id/gradoAcad_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_institucion"
+            android:id="@+id/textView12"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/gradoAcad_consultarCheck"
+            android:layout_alignStart="@+id/gradoAcad_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/IgradoAcad_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView12"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/IgradoAcad_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/IgradoAcad_insertarCheck"
+            android:layout_alignParentLeft="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/IgradoAcad_actualizarCheck"
+            android:checked="false"
+            android:layout_above="@+id/IgradoAcad_eliminarCheck"
+            android:layout_toEndOf="@+id/gradoAcad_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/IgradoAcad_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/IgradoAcad_eliminarCheck"
+            android:layout_alignStart="@+id/contratacion_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_expLab"
+            android:id="@+id/textView13"
+            android:layout_below="@+id/IgradoAcad_eliminarCheck"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/expLab_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView13"
+            android:layout_alignStart="@+id/textView12" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/expLab_actualizarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView13"
+            android:layout_alignStart="@+id/gradoAcad_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/expLab_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/expLab_actualizarCheck"
+            android:layout_alignLeft="@+id/textView12" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/expLab_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/expLab_eliminarCheck"
+            android:layout_alignStart="@+id/expLab_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_cargo"
+            android:id="@+id/textView14"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/expLab_eliminarCheck"
+            android:layout_alignStart="@+id/expLab_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/cargo_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView14"
+            android:layout_alignStart="@+id/textView14" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/cargo_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/cargo_insertarCheck"
+            android:layout_alignStart="@+id/expLab_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/cargo_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/cargo_actualizarCheck"
+            android:layout_alignLeft="@+id/textView14" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/cargo_consultarCheck"
+            android:checked="false"
+            android:layout_below="@+id/cargo_actualizarCheck"
+            android:layout_alignStart="@+id/cargo_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_empresa"
+            android:id="@+id/textView15"
+            android:layout_below="@+id/cargo_eliminarCheck"
+            android:layout_alignStart="@+id/cargo_eliminarCheck"
+            android:layout_marginTop="29dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/empresa_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView15"
+            android:layout_alignStart="@+id/textView15" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/empresa_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/empresa_insertarCheck"
+            android:layout_alignEnd="@+id/cargo_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/empresa_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/empresa_actualizarCheck"
+            android:layout_alignLeft="@+id/textView15" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/empresa_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/empresa_eliminarCheck"
+            android:layout_toEndOf="@+id/empresa_eliminarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_exp_acad"
+            android:id="@+id/textView16"
+            android:layout_marginTop="26dp"
+            android:layout_below="@+id/empresa_eliminarCheck"
+            android:layout_alignStart="@+id/empresa_eliminarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/expAcad_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView16"
+            android:layout_alignStart="@+id/textView16" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/expAcad_actualizarheck"
+            android:checked="false"
+            android:layout_below="@+id/textView16"
+            android:layout_alignEnd="@+id/textView12" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/expAcad_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/expAcad_actualizarheck"
+            android:layout_alignLeft="@+id/textView16" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/expAcad_consultarCheck"
+            android:checked="false"
+            android:layout_below="@+id/expAcad_actualizarheck"
+            android:layout_alignEnd="@+id/cargo_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_ciclo"
+            android:id="@+id/textView17"
+            android:layout_below="@+id/expAcad_eliminarCheck"
+            android:layout_alignStart="@+id/expAcad_eliminarCheck"
+            android:layout_marginTop="26dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/ciclo_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView17"
+            android:layout_alignStart="@+id/textView17" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/ciclo_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/ciclo_insertarCheck"
+            android:layout_alignStart="@+id/expAcad_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/ciclo_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/ciclo_actualizarCheck"
+            android:layout_alignLeft="@+id/textView17" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/ciclo_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/ciclo_eliminarCheck"
+            android:layout_alignEnd="@+id/cargo_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_puesto"
+            android:id="@+id/textView18"
+            android:layout_below="@+id/ciclo_eliminarCheck"
+            android:layout_alignStart="@+id/ciclo_eliminarCheck"
+            android:layout_marginTop="27dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/puesto_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView18"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/puesto_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/puesto_insertarCheck"
+            android:layout_alignStart="@+id/ciclo_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/puesto_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/puesto_actualizarCheck"
+            android:layout_alignParentLeft="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/puesto_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/puesto_eliminarCheck"
+            android:layout_alignStart="@+id/puesto_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_materia"
+            android:id="@+id/textView19"
+            android:layout_below="@+id/puesto_eliminarCheck"
+            android:layout_alignStart="@+id/textView18"
+            android:layout_marginTop="26dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/materia_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView19"
+            android:layout_alignStart="@+id/textView19" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/materia_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/materia_insertarCheck"
+            android:layout_alignStart="@+id/puesto_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/materia_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/materia_actualizarCheck"
+            android:layout_alignLeft="@+id/textView19" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/materia_consultarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/materia_eliminarCheck"
+            android:layout_alignStart="@+id/materia_actualizarCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tbl_institucion_exp_acad"
+            android:id="@+id/textView20"
+            android:layout_below="@+id/materia_eliminarCheck"
+            android:layout_alignStart="@+id/materia_eliminarCheck"
+            android:layout_marginTop="27dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_insertar"
+            android:id="@+id/institucionAcad_insertarCheck"
+            android:checked="false"
+            android:layout_below="@+id/textView20"
+            android:layout_alignStart="@+id/textView20" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_actualizar"
+            android:id="@+id/institucionAcad_actualizarCheck"
+            android:checked="false"
+            android:layout_alignTop="@+id/institucionAcad_insertarCheck"
+            android:layout_alignStart="@+id/materia_consultarCheck" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_eliminar"
+            android:id="@+id/institucionAcad_eliminarCheck"
+            android:checked="false"
+            android:layout_below="@+id/institucionAcad_actualizarCheck"
+            android:layout_alignLeft="@+id/textView20" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crud_consultar"
+            android:id="@+id/institucionAcad_consultarCheck"
+            android:checked="false"
+            android:layout_below="@+id/institucionAcad_actualizarCheck"
+            android:layout_alignStart="@+id/institucionAcad_actualizarCheck" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_actualizar"
+            android:id="@+id/button_actualizar"
+            android:layout_below="@+id/textView6"
+            android:layout_alignStart="@+id/textView5"
+            android:onClick="actualizarUsuario"
+            android:enabled="false"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buscar_btn"
+            android:id="@+id/button"
+            android:onClick="consultarUsuario"
+            android:layout_alignTop="@+id/button_actualizar"
+            android:layout_toEndOf="@+id/button_actualizar" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            android:id="@+id/btn_regresad"
+            android:onClick="regresar"
+            android:layout_below="@+id/textView6"
+            android:layout_toEndOf="@+id/button" />
+
+    </RelativeLayout>
+
+</ScrollView>
+

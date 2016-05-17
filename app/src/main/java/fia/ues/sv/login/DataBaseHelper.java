@@ -248,6 +248,79 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return regInsertados;
     }
 
+    public String eliminar(Usuario usuario){
+        String regAfectados="filas afectadas= ";
+        int contador=0;
+        if (verificarIntegridad(usuario,1)){
+
+            contador+=db.delete("Usuario", "NombreUsuario='"+usuario.getNombreUsuario()+"'", null);
+            contador+=db.delete("AccesoUsuario","IdUsuario='"+usuario.getIdUsuario()+"'",null);
+        }
+        regAfectados+=contador;
+        return regAfectados;
+    }
+
+    public String actualizar(Usuario usuario){
+        if(verificarIntegridad(usuario,1)){
+            String[] id = {usuario.getIdUsuario()};
+            int contador=0;
+            ContentValues cv = new ContentValues();
+            cv.put("NombreUsuario",usuario.getNombreUsuario());
+            cv.put("Clave",usuario.getClave());
+            db.update("Usuario",cv,"IdUsuario = ?",id);
+            contador+=db.delete("AccesoUsuario","IdUsuario='"+usuario.getIdUsuario()+"'",null);
+            return "Registro Actualizado Correctamente";
+
+        }else{
+            return "Usuario no Encontrado";
+        }
+    }
+
+    public Usuario consultarUsuario(String nombre){
+        String[] nom = {nombre};
+        String[] campos = {"IdUsuario", "NombreUsuario", "clave"};
+
+        Cursor cursor = db.query("Usuario", campos, "NombreUsuario = ?", nom, null, null, null);
+        if(cursor.moveToFirst()){
+            Usuario usuario = new Usuario();
+            usuario.setIdUsuario(cursor.getString(0));
+            usuario.setNombreUsuario(cursor.getString(1));
+            usuario.setClave(cursor.getString(2));
+            return usuario;
+        }
+        else{
+            return null;
+        }
+    }
+
+
+
+    public boolean checkPermiso(String id_usuario, String id_opcion){
+        abrir();
+        Cursor cursor = db.query("AccesoUsuario", new String [] {"idOpcion", "IdUsuario"}, "idOpcion = ? AND IdUsuario = ?",
+                new String[] { id_opcion, id_usuario},null,null,null);
+        if(cursor.moveToFirst()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public String getMaxIdUsuario(){
+        abrir();
+        Cursor cursor = db.rawQuery("SELECT MAX(IdUsuario) FROM Usuario",null);
+        String max;
+        if(cursor.moveToFirst()){
+            max = cursor.getString(0);
+            return max;
+        }
+        else{
+            return null;
+        }
+
+    }
+
     public String llenarDatosPrueba(){
         //datos para Usuario
         final String[] nombres = {"Carlos","Alberto","Hernan"};
@@ -271,9 +344,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 0,1,2,3,4,
                 0,1,2,3,4,
                 0,1,2,3,4,
-                0,1,2,3,4};
+                0,1,2,3,4,
+                0,1,2,3,4,};
 
-        final String[] idOpcion = {"010","011","012","013","014",
+        final String[] idOpcion = {"000","001","002","003","004",
+                "010","011","012","013","014",
                 "020","021","022","023","024",
                 "030","031","032","033","034",
                 "040","041","042","043","044",
@@ -287,7 +362,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "120","121","122","123","124",
                 "130","131","132","133","134",
                 "140","141","142","143","144"};
-        final String[] desOpcion ={"Menu Docente","Insertar Docente","Actualizar Docente","Eliminar Docente","Consultar Docente",
+        final String[] desOpcion ={"Menu Usuario","Insertar Usuario","Actualizar Usuario","Eliminar usuario","Consultar Usuario",
+                "Menu Docente","Insertar Docente","Actualizar Docente","Eliminar Docente","Consultar Docente",
                 "Menu Tipo_contratacion","Insertar Tipo_contratacion","Actualizar Tipo_contratacion","Eliminar Tipo_contratacion","Consultar Tipo_contratacion",
                 "Menu Categoria","Insertar Categoria","Actualizar Categoria","Eliminar Categoria","Consultar Categoria",
                 "Menu Detalle_grado_acad","Insertar Detalle_grado_acad","Actualizar Detalle_grado_acad","Eliminar Detalle_grado_acad","Consultar Detalle_grado_acad",
@@ -316,7 +392,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         // Tabla OpcionCrud
-        for(int i=0; i<70; i++){
+        for(int i=0; i<75; i++){
             opcion.setIdOpcion(idOpcion[i]);
             opcion.setDesOpcion(desOpcion[i]);
             opcion.setNumCrud(numOp[i]);
@@ -325,6 +401,31 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         return "Guardado correctamente";
+    }
+
+    public boolean verificarIntegridad(Object objeto, int relacion){
+        switch (relacion){
+            case 1:{
+                //verficar si ya existe ese nombre de usuario
+                Usuario usuario = (Usuario) objeto;
+                String[] id1 = {usuario.getNombreUsuario()};
+                abrir();
+                Cursor cursor1 = db.query("Usuario", null, "NombreUsuario = ?", id1, null, null, null);
+                if(cursor1.moveToFirst() ){
+                    //Se encontraron datos
+                    return true;
+                }else{
+                    return false;
+                }
+
+
+            }
+
+
+
+            default:
+                return false;
+        }
     }
 
 

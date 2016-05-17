@@ -25,5 +25,16 @@
     <string name="crud_actualizar">Actualizar</string>
     <string name="crud_eliminar">Eliminar</string>
     <string name="crud_consultar">Consultar</string>
+    <string name="check_todo">Todos</string>
+    <string name="tbl_materia">Materia</string>
+    <string name="insertar_button">Insertar</string>
+    <string name="buscar_btn">Buscar</string>
+    <string name="eliminar_usuario">Eliminar Usuario</string>
+    <string name="text_actualizar_usuario">Actualizar Usuario</string>
+    <string name="txt_nombre">Nuevo Nombre</string>
+    <string name="text_nueva_contraseña">Actualizar Contraseña</string>
+    <string name="text_nuevo_nombre">Nuevo Nombre</string>
+    <string name="btn_actualizar">Actualizar</string>
+    <string name="text_editar_permisos">Editar permisos</string>
 
 </resources>

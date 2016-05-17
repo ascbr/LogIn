@@ -9,4 +9,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fia.ues.sv.login.EliminarUsuarioActivity">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/eliminar_usuario"
+        android:id="@+id/textView21"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_nombre"
+        android:layout_marginTop="71dp"
+        android:layout_below="@+id/textView21"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/textNombreUsuario"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar_usuario"
+        android:id="@+id/btn_eliminar"
+        android:layout_below="@+id/editText_nombre"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:onClick="eliminarUsuario"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Se eliminaran tambien los permisos de acceso del usuario."
+        android:id="@+id/textView23"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/btn_eliminar"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:id="@+id/btn_regresad"
+        android:onClick="regresar"
+        android:layout_alignTop="@+id/btn_eliminar"
+        android:layout_toEndOf="@+id/textView21" />
+
 </RelativeLayout>

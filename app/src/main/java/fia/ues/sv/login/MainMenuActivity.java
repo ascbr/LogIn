@@ -11,16 +11,15 @@ import android.widget.ListView;
 public class MainMenuActivity extends ListActivity {
 
     String[] menu={"Usuarios","Docentes","Grados Academicos", "Experiencia laboral","Experiencia Academica","Salir"};
-    String[] activities ={"","MenuUsuarioActivity"};
-
+    String[] activities ={"","CrudUsuario"};
+    String ID_;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /** String userName = getIntent().getStringExtra("userName");
-        TextView tv = (TextView) findViewById(R.id.textWusuario);
-        tv.setText(userName);*///No se porque no agarra esto
+       ID_ = getIntent().getStringExtra("id");
 
-        ;
+
+
         setContentView(R.layout.activity_main_menu);
 
         View header = getLayoutInflater().inflate(R.layout.header_view_mp, null);
@@ -44,6 +43,8 @@ public class MainMenuActivity extends ListActivity {
             try{
                 Class<?> clase=Class.forName("fia.ues.sv.login."+nombreValue);
                 Intent inte = new Intent(this,clase);
+                inte.putExtra("id",ID_);
+                System.out.println("------------> ID capturado menu principal:"+ID_);
                 this.startActivity(inte);
 
             }catch(ClassNotFoundException e){
@@ -55,7 +56,6 @@ public class MainMenuActivity extends ListActivity {
 
                 Intent inte = new Intent(this,clase);
 
-               // inte.putExtra("userName",usuario.getText().toString());
                 this.startActivity(inte);
 
             }catch(ClassNotFoundException e){
